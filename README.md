@@ -9,14 +9,12 @@ Pitch us on potential ideas for a data-driven project. Think of topics you’re 
 - **Requirements:** Lightning talk with 2-3 topics, including a problem statement, potential audience, goals, and success metrics, as well as possible data sources for each. Remember, if you can’t find data, you can’t do your project
 - **Format:** Slide deck
 
+### ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Next Steps
 
-### **Capstone, Part 2: Dataset + Data Collection**
-
-### **Capstone, Part 3: EDA + Preliminary Analysis**
-
-### **Capstone, Part 4: Findings + Technical Report**
-
-### **Capstone, Part 5: Presentation + Non-Technical Summary**
+* **Capstone, Part 2: Dataset + Data Collection**
+* **Capstone, Part 3: EDA + Preliminary Analysis**
+* **Capstone, Part 4: Findings + Technical Report**
+* **Capstone, Part 5: Presentation + Non-Technical Summary**
 
 ### ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Approximate Due Dates
 
