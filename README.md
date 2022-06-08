@@ -18,7 +18,7 @@ Pitch us on potential ideas for a data-driven project. Think of topics you’re 
 
 ### **Capstone, Part 5: Presentation + Non-Technical Summary**
 
-### Approximate Due Dates
+### ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Approximate Due Dates
 
 These are all subject to change!
 
