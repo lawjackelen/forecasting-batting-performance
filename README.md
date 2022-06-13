@@ -37,3 +37,4 @@ Date | Assignment
 <!--- LINKS --->
 
 [part-1]: ./part-01/
+[part-2]: ./part-02/
