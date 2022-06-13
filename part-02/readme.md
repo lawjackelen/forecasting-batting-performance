@@ -1,4 +1,4 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Part 2: Dataset + Data Collection
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Part 2: Dataset + Data Cleaning
 
 ## Overview
 
@@ -6,7 +6,7 @@ Based on the feedback you received from your lightning talk, choose **one** of y
 
 This is not always a trivial task. Remember that data acquisition, transformation, and cleaning are typically the most time-consuming parts of data science projects, so don’t procrastinate!
 
-Once you have your data, read into it and review it to confirm whether it is as productive as you intended. If not, switch datasets, gather additional data (e.g. multiple datasets), or revise your project goals. 
+Once you have your data, read into it and review it to confirm whether it is as productive as you intended. If not, switch datasets, gather additional data (e.g. multiple datasets), or revise your project goals.
 
 Create your own database and data dictionary, then clean and munge your data as appropriate. Finally, document your work so far.
 
@@ -16,14 +16,14 @@ Create your own database and data dictionary, then clean and munge your data as 
 
 ## Requirements
 
-1. Find and Clean Your Data: Source and format the required data for your project. 
+1. Find and Clean Your Data: Source and format the required data for your project.
    - Create a database
    - Create a data dictionary
-2. Perform preliminary data munging and cleaning of your data: organize your data relevant to your project goals. 
+2. Perform preliminary data munging and cleaning of your data: organize your data relevant to your project goals.
    - Review data to verify initial assumptions
    - Clean and munge data as necessary
 3. Describe your data: keep your intended audience(s) in mind.
-   - Document your work so far in a Jupyter notebook. 
+   - Document your work so far in a Jupyter notebook.
 
 #### Bonus
 
@@ -44,9 +44,9 @@ Create your own database and data dictionary, then clean and munge your data as 
 
 ## Suggested Ways to Get Started
 
-- Review your initial proposal topic and feedback, and revise accordingly. 
-- Spend time with your data and verify that it can help you accomplish the goals you set out to pursue. 
-- If not, document how you intend to either change those goals. 
+- Review your initial proposal topic and feedback, and revise accordingly.
+- Spend time with your data and verify that it can help you accomplish the goals you set out to pursue.
+- If not, document how you intend to either change those goals.
 - Alternatively, go find some additional data and/or try another source.
 
 ---
