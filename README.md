@@ -66,7 +66,7 @@ The database that was created had a level-of-detail of player-season-stint. Each
 ## Data Cleaning
 Baseball fans, reporters, historians, and statisticians tend to agree that there are different eras for baseball. They have names like "dead-ball era", "live-ball era", "post-war", "steroid era", etc. The lively debate online is not whether they exist but the lines of demarcation between the eras.
 
-<img src=assets/Era_Chart.png alt="drawing" width="400"/>
+<p align="center"><img src=assets/Era_Chart.png  alt="drawing" width="800" /></p>
 [source](https://aluby.domains.swarthmore.edu/sdv/posts/2021-02-26-mlb-home-runs/)
 
 For this analysis, we will examine the league starting in the "expansion era" which is commonly described as starting in 1962 due to the increase in the number of teams in the league. This will have a few benefits:
@@ -99,8 +99,8 @@ Next, a dataframe was created to include the lookback values of each feature whi
 ## Preprocessing RDF and YDF
 A problem I foresaw with trying to model WAA_pg was that it relied on both a player's performance as well as the league environment. Trying to model both simultaneously seemed to be asking too much and could be simplified by trying to model the player's performance and the league environment separately. For example: Run variables are correlated with WAA_pg while the league environment variable opponent runs per game isn't.
 
-<img src=assets/runs.png alt="drawing" width="400"/>
-<img src=assets/opprpg.png alt="drawing" width="400"/>
+<p align="center"><img src=assets/runs.png alt="drawing" width="800" class="center"/></p>
+<p align="center"><img src=assets/opprpg.png alt="drawing" width="400" class="center"/></p>
 
 Note how there are bands of values for opprpg. Those values are constant for a season and will span the WAA_pg of every player who played in that season. While uncorrelated, the opprpg is used in the calculation of WAA to translate runs into wins.
 
@@ -114,7 +114,7 @@ The predicted values on the test set were sent over to be used in modelling wher
 ## Preprocessing Full Approach
 The same process was used with the full dataset that was used for RDF for preprocessing. Standard Scaled, reduced from 68 columns down to 11, and had 6 PCA features added back to capture about 50% of the noise from those 57 removed features.
 
-<img src=assets/pca.png alt="drawing" width="400"/>
+<p align="center"><img src=assets/pca.png alt="drawing" width="400" class="center"/></p>
 
 ## Modelling Full Approach
 The same models were used to model the full approach with Linear Regression without regularization taking the top performance at a score of 36%
