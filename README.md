@@ -67,7 +67,8 @@ The database that was created had a level-of-detail of player-season-stint. Each
 Baseball fans, reporters, historians, and statisticians tend to agree that there are different eras for baseball. They have names like "dead-ball era", "live-ball era", "post-war", "steroid era", etc. The lively debate online is not whether they exist but the lines of demarcation between the eras.
 
 <p align="center"><img src=assets/Era_Chart.png  alt="drawing" width="800" /></p>
-[source](https://aluby.domains.swarthmore.edu/sdv/posts/2021-02-26-mlb-home-runs/)
+
+[image source](https://aluby.domains.swarthmore.edu/sdv/posts/2021-02-26-mlb-home-runs/)
 
 For this analysis, we will examine the league starting in the "expansion era" which is commonly described as starting in 1962 due to the increase in the number of teams in the league. This will have a few benefits:
 
