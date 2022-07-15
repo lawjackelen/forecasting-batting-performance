@@ -82,7 +82,7 @@ As mentioned during data collection, the dataset does not currently have a level
 
 Our target is a cumulative metric, but we want to be able to control for seasons where a player may have played fewer games than others. Just because a player was injured, doesn't mean they weren't performing well without the injury. For this reason, all cumulative stats were turned into rates of per-game. Pre-existing rate stats were unchanged.
 
-The last bit that needed to be done was to create positional variables for the percent of games played at a position within the season. The data from Baseball-Reference was originally in the format of games at each position, so those were min-max scaled across all positions to produce the share of games played at each position.
+The last bit that needed to be done was to create positional variables for the percent of games played at a position within the season. The data from Baseball-Reference was originally in the format of games at each position, so those were recalculated to produce the percentage share of games played at each position.
 
 ## Feature Extraction
 At this point, our dataset consisted of the WAA_pg (our rate target variable) and the underlying features from the player-season. But, we aren't interested in calculating WAA_pg using known season statistics, we want to be able to forecast WAA_pg *before* the season starts! To accomplish this, the dataset was analyzed to see how much of our data would be culled if we only kept players who had rows for a consistent number of years. A few lookback windows were reviewed:
