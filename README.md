@@ -13,36 +13,24 @@ Armed with WAA and other metrics available from Baseball-Reference.com, utilize 
 capstone
 |__ code
 |   |__ 01_Data_Cleaning.ipynb
-|   |__ 02_Feature_Extraction.ipynb
-|   |__ 03_RDF_YDF_Extraction.ipynb
-|   |__ 04_RDF_YDF_Preprocessing.ipynb
-|   |__ 05_RDF_YDF_Modelling.ipynb
-|   |__ 06_Full_Approach_Preprocessing.ipynb
-|   |__ 07_Full_Approach_Modelling.ipynb
+|   |__ 02_Feature_Extraction_and_Cleaning.ipynb
+|   |__ 03_Full_Approach_Preprocessing.ipynb
+|   |__ 04_Full_Approach_Modelling.ipynb
+|   |__ 05_RDF_YDF_Extraction.ipynb
+|   |__ 06_RDF_YDF_Preprocessing.ipynb
+|   |__ 07_RDF_YDF_Modelling.ipynb
 |__ data
 |   |__ war_daily_bat.txt
 |   |__ majors_appearances.csv
 |   |__ baseballdatabank-master\baseballdatabank-master\core\Teams.csv
 |   |__ batpos_eda.csv
 |   |__ batpos_feature_extracted.csv
-|   |__ rdf.csv
-|   |__ ydf.csv
-|   |__ rdf_x_train_preprocessed.csv
-|   |__ rdf_y_train_preprocessed.csv
-|   |__ rdf_x_test_preprocessed.csv
-|   |__ rdf_y_test_preprocessed.csv
-|   |__ ydf_x_train_preprocessed.csv
-|   |__ ydf_y_train_preprocessed.csv
-|   |__ ydf_x_test_preprocessed.csv
-|   |__ ydf_y_test_preprocessed.csv
-|   |__ rdf_X_test_svr.csv
-|   |__ ydf_X_test_rf.csv
-|   |__ x_train_preprocessed.csv
-|   |__ x_test_preprocessed.csv
-|   |__ y_train.csv
-|   |__ y_test.csv
-|   |__ baseline_train.csv
-|   |__ baseline_test.csv
+|   |__ batpos_full_feature_extracted.csv
+|   |__ X_test_full_for_baseline.csv
+|   |__ batpos_full_preprocessed.csv
+|   |__ rdf_ydf.csv
+|   |__ rdf_ydf_feature_extracted.csv
+|   |__ rdf_ydf_preprocessed.csv
 |__ README.md
 ```
 
@@ -51,7 +39,7 @@ Information was obtained from Baseball-Reference.com, either directly via downlo
 
 Two approaches were used when preprocessing the data: (1) Create time-series lookbacks for each feature, and (2) Model Player Performance and League Environment separately, then include that with past performance of WAA.
 
-Approach (1) produced model score results of 36% through a simple Linear Regression model, while (2) produced model score results of 34% through Support Vector Machine Regression. Both were above the baseline score of 29%--calcualted by taking the weighted average of the past three years WAA--indicating that there is a opportunity to forecast batting performance with a competitive edge.
+Approach (1) produced model score results of 39% through a Linear Regression model, while (2) produced model score results of 37% through Random Forest Regression. Both were above the baseline score of 29%--calcualted by taking the weighted average of the past three years WAA--indicating that there is a opportunity to forecast batting performance with a competitive edge.
 
 ## Data Collection
 Data for this project was collected three ways:
@@ -110,7 +98,7 @@ With runs and opprpg being critical parrts of the WAA equation, I decided to pre
 ## Modelling RDF and YDF
 Both the runs dataframe (RDF) and the opprpg (year dataframe aka YDF) were modelled using a Linear Regression with and without regularization, Random Forest Regression, and Support Vector Regression. Hyperparameters for RDF were tuned using Grid Search for both Random Forest and SVR. The findings were RDF performed best using SVR with a score of 35% against a standard regression baseline of 0, while YDF performed best with Random Forest with a score of 95% against a standard regression baseline of 0.
 
-The predicted values on the test set were sent over to be used in modelling where they were combined with the rest of the features not included in RDF and YDF. The same regression model types were used and Random Forest Regression performed the best with a score of 34% against the 27% baseline.
+The predicted values on the test set were sent over to be used in modelling where they were combined with the rest of the features not included in RDF and YDF. The same regression model types were used and Random Forest Regression performed the best with a score of 37% against the 29% baseline.
 
 ## Preprocessing Full Approach
 The same process was used with the full dataset that was used for RDF for preprocessing. Standard Scaled, reduced from 68 columns down to 11, and had 6 PCA features added back to capture about 50% of the noise from those 57 removed features.
@@ -118,7 +106,7 @@ The same process was used with the full dataset that was used for RDF for prepro
 <p align="center"><img src=assets/pca.png alt="drawing" width="400" class="center"/></p>
 
 ## Modelling Full Approach
-The same models were used to model the full approach with Linear Regression without regularization taking the top performance at a score of 36%
+The same models were used to model the full approach with Linear Regression without regularization taking the top performance at a score of 39%
 
 ## Future Developments
 So many things can be added to this model to try and capture additional noise. The most surprising thing was the poor performance of the RDF models. It would seem that the previous 3 years of a player's career would be a good indicator for future performance, but it just wasn't the case. Looking deeper into the nuts and bolts of the normalizing that Baseball-Reference does could also help tighten the model--there may be more at play with the league environmental variables beyond just the average amount of runs being scored per game.
