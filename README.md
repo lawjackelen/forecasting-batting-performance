@@ -31,6 +31,7 @@ capstone
 |   |__ rdf_ydf.csv
 |   |__ rdf_ydf_feature_extracted.csv
 |   |__ rdf_ydf_preprocessed.csv
+|__ Data_Dictionary.ipynb
 |__ requirements.txt
 |__ README.md
 ```
@@ -40,7 +41,7 @@ Information was obtained from Baseball-Reference.com, either directly via downlo
 
 Two approaches were used when preprocessing the data: (1) Create time-series lookbacks for each feature, and (2) Model Player Performance and League Environment separately, then include that with past performance of WAA.
 
-Approach (1) produced model score results of 39% through a Linear Regression model, while (2) produced model score results of 37% through Random Forest Regression. Both were above the baseline score of 29%--calcualted by taking the weighted average of the past three years WAA per game--indicating that there is an opportunity to forecast batting performance with a competitive edge.
+Approach (1) produced model score results of 39% through a Linear Regression model, while (2) produced model score results of 37% through Random Forest Regression. Both were above the baseline score of 29%-31%--calcualted by taking the weighted average of the past three years WAA per game--indicating that there is an opportunity to forecast batting performance with a competitive edge.
 
 ## Data Collection
 Data for this project was collected three ways:
@@ -110,7 +111,7 @@ With runs and opprpg being critical parrts of the WAA equation, I decided to pre
 ## Modelling RDF and YDF
 Both the runs dataframe (RDF) and the opprpg (year dataframe aka YDF) were modelled using a Linear Regression with and without regularization, Random Forest Regression, and Support Vector Regression. Hyperparameters for Random Forest for RDF and YDF were tuned using Halving Grid Search, while SVM Regression used Grid Search. The findings were RDF performed best Linear Regression with Lasso feature selection for as score of 37.1% against a standard regression baseline of 0, while YDF performed best with Random Forest with a score of 96% against a standard regression baseline of 0.
 
-The predicted values on the test set were sent over to be used in modeling where they were combined with the rest of the features not included in RDF and YDF. The same regression model types were used and Random Forest Regression performed the best with a score of 37.3% against the 29% baseline.
+The predicted values on the test set were sent over to be used in modeling where they were combined with the rest of the features not included in RDF and YDF. The same regression model types were used and Random Forest Regression performed the best with a score of 37.3% against the 31% baseline (the baseline was actually higher during this approach).
 
 Ultimately, separating RDF and YDF did not yield better results.
 
