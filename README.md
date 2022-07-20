@@ -43,6 +43,9 @@ Two approaches were used when preprocessing the data: (1) Create time-series loo
 
 Approach (1) produced model score results of 39% through a Linear Regression model, while (2) produced model score results of 37% through Random Forest Regression. Both were above the baseline score of 29%-31%--calcualted by taking the weighted average of the past three years WAA per game--indicating that there is an opportunity to forecast batting performance with a competitive edge.
 
+## Data Dictionary
+Data Dictionary for this project is available in the repository at Data_Dictionary.ipynb
+
 ## Data Collection
 Data for this project was collected three ways:
 -  Baseball-Reference.com hosts a downloads [page](https://www.baseball-reference.com/data/) where data on players' value performance stats can be easily downloaded.
