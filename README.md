@@ -119,9 +119,9 @@ The predicted values on the test set were sent over to be used in modeling where
 Ultimately, separating RDF and YDF did not yield better results.
 
 ## Results and Conclusions
-The production model outperformed the baseline using the Full Approach by 10%. The linear model that achieved the score showed the most important features to be the previous 3 years of waa_pg where waa_pg_1yr was 1.2 times more impactful than waa_pg_2yr and 1.5 times more than waa_pg_3yr.
+The production model outperformed the baseline using the Full Approach by 10%. The linear model that achieved the score showed the most important features to be the previous 3 years of waa_pg where waa_pg_1yr was 1.05 times more impactful than waa_pg_2yr and 2.8 times more than waa_pg_3yr.
 
-Age was the leading negative contributor with each year of age negatively impacting predicted waa_pg the same as 0.18 standard deviations of waa_pg_1yr--the leading positive contributor.
+Age was the leading negative contributor with each year of age negatively impacting predicted waa_pg the same as 0.15 standard deviations of waa_pg_1yr--the leading positive contributor.
 
 <p align="center"><img src=assets/model.png alt="drawing" width="800" class="center"/></p>
 
