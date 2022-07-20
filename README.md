@@ -46,6 +46,14 @@ Approach (1) produced model score results of 39% through a Linear Regression mod
 ## Data Dictionary
 Data Dictionary for this project is available in the repository at Data_Dictionary.ipynb
 
+## Requirements
+This project requires few libraries:
+-  pandas
+-  numpy
+-  matplotlib.pyplot
+-  seaborn
+-  sklearn
+
 ## Data Collection
 Data for this project was collected three ways:
 -  Baseball-Reference.com hosts a downloads [page](https://www.baseball-reference.com/data/) where data on players' value performance stats can be easily downloaded.
