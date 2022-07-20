@@ -41,7 +41,7 @@ Information was obtained from Baseball-Reference.com, either directly via downlo
 
 Two approaches were used when preprocessing the data: (1) Create time-series lookbacks for each feature, and (2) Model Player Performance and League Environment separately, then include that with past performance of WAA.
 
-Approach (1) produced model score results of 39% through a Linear Regression model, while (2) produced model score results of 37% through Random Forest Regression. Both were above the baseline score of 29%-31%--calcualted by taking the weighted average of the past three years WAA per game--indicating that there is an opportunity to forecast batting performance with a competitive edge.
+Approach (1) produced model score results of 39% through a Linear Regression model, while (2) produced model score results of 37% through Random Forest Regression. Both were above the baseline score of 29%-31%--calculated by taking the weighted average of the past three years WAA per game--indicating that there is an opportunity to forecast batting performance with a competitive edge.
 
 ## Data Dictionary
 Data Dictionary for this project is available in the repository at Data_Dictionary.ipynb
@@ -99,7 +99,7 @@ During preprocessing, the features were standard scaled, and then reduced using 
 <p align="center"><img src=assets/pca.png alt="drawing" width="400" class="center"/></p>
 
 ## Modelling Full Approach
-Three regression models were trained. Random Forest Regression hyperparameters were optimized using Halving Grid Search and resulted in a score of 30.2% against the 29.6% baseline. SVM Regression hyperparameters were optimized using Grid Search and result in a score of 30.4%. Linear regression without regularization scored 39.0% and lasso feature selection got it up to 39.1%. This became the production model.
+Three regression models were trained. Random Forest Regression hyperparameters were optimized using Halving Grid Search and resulted in a score of 35.9% against the 29.6% baseline. SVM Regression hyperparameters were optimized using Grid Search and result in a score of 34.0%. Linear regression without regularization scored 39.0% and lasso feature selection got it up to 39.1%. This became the production model.
 
 ## RDF and YDF Approach
 A problem I foresaw with trying to model WAA_pg was that it relied on both a player's performance as well as the league environment. Trying to model both simultaneously seemed to be asking too much and could be simplified by trying to model the player's performance and the league environment separately. For example: Run variables are correlated with WAA_pg while the league environment variable opponent runs per game isn't.
@@ -109,10 +109,10 @@ A problem I foresaw with trying to model WAA_pg was that it relied on both a pla
 
 Note how there are bands of values for opprpg. Those values are constant for a season and will span the WAA_pg of every player who played in that season. While uncorrelated, the opprpg is used in the calculation of WAA to translate runs into wins.
 
-With runs and opprpg being critical parrts of the WAA equation, I decided to preprocess them individually in preparation for modelling them individually. The runs and opprpg datasets were both standard scaled, and runs was reduced from 62 features to 20 using Recursive Feature Elimination (RFE). The noise from those 42 eliminated features was then added back in using Principal Component Analysis, and 5 PCA features were added back to the runs dataset for a total of 25 features. These 5 PCA features captured over half of the variance explained.
+With runs and opprpg being critical parrts of the WAA equation, I decided to preprocess them individually in preparation for modelling them individually. The runs and opprpg datasets were both standard scaled. The remaining features not in RDF or YDF were also standard scaled with the number of features reduced from 53 to 20 using Recursive Feature Elimination (RFE). The noise from those 33 eliminated features was then added back in using Principal Component Analysis, and 5 PCA features were added back to this non-rdf/ydf dataset for a total of 25 features. These 5 PCA features captured over half of the variance explained.
 
 ## Modelling RDF and YDF
-Both the runs dataframe (RDF) and the opprpg (year dataframe aka YDF) were modelled using a Linear Regression with and without regularization, Random Forest Regression, and Support Vector Regression. Hyperparameters for Random Forest for RDF and YDF were tuned using Halving Grid Search, while SVM Regression used Grid Search. The findings were RDF performed best Linear Regression with Lasso feature selection for as score of 37.1% against a standard regression baseline of 0, while YDF performed best with Random Forest with a score of 96% against a standard regression baseline of 0.
+Both the runs dataframe (RDF) and the opprpg (year dataframe aka YDF) were modelled using a Linear Regression with and without regularization, Random Forest Regression, and Support Vector Regression. Hyperparameters for Random Forest for RDF and YDF were tuned using Halving Grid Search, while SVM Regression used Grid Search. The findings were RDF performed best Linear Regression with Lasso feature selection for as score of 37.1 against a standard regression baseline of 0, while YDF performed best with Random Forest with a score of 96% against a standard regression baseline of 0.
 
 The predicted values on the test set were sent over to be used in modeling where they were combined with the rest of the features not included in RDF and YDF. The same regression model types were used and Random Forest Regression performed the best with a score of 37.3% against the 31% baseline (the baseline was actually higher during this approach).
 
